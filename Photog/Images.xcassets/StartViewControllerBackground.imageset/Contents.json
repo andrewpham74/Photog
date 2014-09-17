@@ -1,0 +1,31 @@
+{
+  "images" : [
+    {
+      "idiom" : "iphone"
+    },
+    {
+      "idiom" : "iphone",
+      "subtype" : "retina4"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "1x",
+      "filename" : "Landing-Screen_4s-1.jpg"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "filename" : "Landing-Screen_4s.jpg"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "Landing-Screen_5s.jpg",
+      "subtype" : "retina4",
+      "scale" : "2x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

@@ -13,10 +13,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
 
-
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
         // Override point for customization after application launch.
+        
+        self.setupParse()
+        self.setupAppAppearance();
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        var navigationController = UINavigationController()
+        var startViewController = StartViewController(nibName: "StartViewController", bundle: nil)
+        
+        if PFUser.currentUser() == nil
+        {
+            navigationController.viewControllers = [startViewController]
+        }
+        else
+        {
+            var tabBarController = TabBarController()
+            navigationController.viewControllers = [startViewController, tabBarController]
+        }
+        
+        self.window!.rootViewController = navigationController
+        self.window!.makeKeyAndVisible()
+        
         return true
+    }
+    
+    func setupParse()
+    {
+        Parse.setApplicationId("nLNOOBOavu5nKZrnb1JdOvLh1FxKYalzZgF4ZnN5", clientKey:"7ukuItEQufVuTumGrE5zG1fi8vpYDDXH45rNKpkv")
+        
+//        var testObject = PFObject(className: "TestObject")
+//        testObject["foo"] = "bar"
+//        testObject.saveInBackground()
+    }
+    
+    func setupAppAppearance()
+    {
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
+        UINavigationBar.appearance().barTintColor = UIColor.blackColor()
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        
+        UITabBar.appearance().barTintColor = UIColor.blackColor()
+        UITabBar.appearance().tintColor = UIColor.whiteColor()
+        UITabBar.appearance().selectionIndicatorImage = UIImage(named: "SelectedTabBackground")
     }
 
     func applicationWillResignActive(application: UIApplication!) {
