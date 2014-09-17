@@ -33,6 +33,8 @@
 		BFDD619F19C64687008FEA3D /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFDD619D19C64687008FEA3D /* PostCell.xib */; };
 		BFE0649919C1225B008CBC5A /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE0649819C1225B008CBC5A /* String+Extensions.swift */; };
 		BFE0649B19C137CF008CBC5A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE0649A19C137CF008CBC5A /* TabBarController.swift */; };
+		BFF7D57719C90FFC007F5D99 /* NSDate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7D57619C90FFC007F5D99 /* NSDate+Extensions.swift */; };
+		BFF7D57919C91E1A007F5D99 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7D57819C91E1A007F5D99 /* UIColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		BFDD619D19C64687008FEA3D /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		BFE0649819C1225B008CBC5A /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		BFE0649A19C137CF008CBC5A /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		BFF7D57619C90FFC007F5D99 /* NSDate+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extensions.swift"; sourceTree = "<group>"; };
+		BFF7D57819C91E1A007F5D99 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				BFE0649819C1225B008CBC5A /* String+Extensions.swift */,
+				BFF7D57619C90FFC007F5D99 /* NSDate+Extensions.swift */,
+				BFF7D57819C91E1A007F5D99 /* UIColor+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -313,8 +319,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF3E3FBE19C63DD8002BA105 /* NetworkManager.swift in Sources */,
+				BFF7D57919C91E1A007F5D99 /* UIColor+Extensions.swift in Sources */,
 				BFE0649919C1225B008CBC5A /* String+Extensions.swift in Sources */,
 				BF4E9A5819BD055200160802 /* AppDelegate.swift in Sources */,
+				BFF7D57719C90FFC007F5D99 /* NSDate+Extensions.swift in Sources */,
 				BFC9B93A19BD3EBE00726C6F /* AuthViewController.swift in Sources */,
 				BFE0649B19C137CF008CBC5A /* TabBarController.swift in Sources */,
 				BFC9B93619BD274B00726C6F /* StartViewController.swift in Sources */,

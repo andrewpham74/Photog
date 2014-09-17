@@ -29,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.46730701289999999" green="0.80546748459999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="61u-zL-wm6" secondAttribute="centerY" id="8Wq-E4-mdj"/>
                             <constraint firstAttribute="trailing" secondItem="61u-zL-wm6" secondAttribute="trailing" constant="10" id="Wdd-6n-d8i"/>
@@ -38,9 +38,9 @@
                             <constraint firstItem="ftE-9e-y2l" firstAttribute="leading" secondItem="7S3-IP-J9W" secondAttribute="leading" constant="10" id="z8N-cB-5iA"/>
                         </constraints>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lok-34-FAs">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PostPlaceholderImage" translatesAutoresizingMaskIntoConstraints="NO" id="Lok-34-FAs">
                         <rect key="frame" x="10" y="40" width="300" height="300"/>
-                        <color key="backgroundColor" red="0.46730701289999999" green="0.80546748459999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="300" id="41J-Na-cUp"/>
                             <constraint firstAttribute="width" constant="300" id="koC-IH-2rz"/>
@@ -65,4 +65,7 @@
             <point key="canvasLocation" x="286" y="170.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="PostPlaceholderImage" width="300" height="304"/>
+    </resources>
 </document>
