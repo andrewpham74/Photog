@@ -91,41 +91,15 @@ class PersonCell: UITableViewCell {
     {
         self.followButton?.enabled = false
         
-        if (self.isFollowing == true)
-        {
-            NetworkManager.sharedInstance.unfollow(self.user, completionHandler: { (error) -> () in
-
-                self.followButton?.enabled = true
-
-                if let constError = error
-                {
-                    println(error)
-                }
-                else
-                {
-                    var image = UIImage(named: "FollowButton")
-                    self.followButton?.setImage(image, forState: .Normal)
-                    self.isFollowing = false
-                }
-            })
-        }
-        else
-        {
-            NetworkManager.sharedInstance.follow(self.user, completionHandler: { (error) -> () in
-                
-                self.followButton?.enabled = true
-
-                if let constError = error
-                {
-                    println(error)
-                }
-                else
-                {
-                    var image = UIImage(named: "UnfollowButton")
-                    self.followButton?.setImage(image, forState: .Normal)
-                    self.isFollowing = true
-                }
-            })
+        var newValue = !(self.isFollowing == true)
+        NetworkManager.sharedInstance.updateFollowValue(newValue, user: self.user) { (error) -> () in
+            
+            self.followButton?.enabled = true
+            
+            var image = (newValue == true) ? UIImage(named: "UnfollowButton") : UIImage(named: "FollowButton")
+            self.followButton?.setImage(image, forState: .Normal)
+            
+            self.isFollowing = newValue
         }
     }
     
