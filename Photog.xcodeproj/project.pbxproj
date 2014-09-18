@@ -21,6 +21,8 @@
 		BF4E9A8719BD0E5200160802 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF4E9A8619BD0E5200160802 /* Security.framework */; };
 		BF4E9A8919BD0E5700160802 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF4E9A8819BD0E5700160802 /* StoreKit.framework */; };
 		BF4E9A8B19BD0E5F00160802 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF4E9A8A19BD0E5F00160802 /* SystemConfiguration.framework */; };
+		BF79418819CA4B7200817D9E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF79418619CA4B7200817D9E /* SearchViewController.swift */; };
+		BF79418919CA4B7200817D9E /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF79418719CA4B7200817D9E /* SearchViewController.xib */; };
 		BFC9B92719BD1ADA00726C6F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC9B92519BD1ADA00726C6F /* Bolts.framework */; };
 		BFC9B92819BD1ADA00726C6F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC9B92619BD1ADA00726C6F /* Parse.framework */; };
 		BFC9B93619BD274B00726C6F /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9B93419BD274B00726C6F /* StartViewController.swift */; };
@@ -67,6 +69,8 @@
 		BF4E9A8819BD0E5700160802 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BF4E9A8A19BD0E5F00160802 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		BF4E9A8C19BD0F4A00160802 /* Photog-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Photog-Bridging-Header.h"; sourceTree = "<group>"; };
+		BF79418619CA4B7200817D9E /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		BF79418719CA4B7200817D9E /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		BFC9B92519BD1ADA00726C6F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../Bolts.framework; sourceTree = "<group>"; };
 		BFC9B92619BD1ADA00726C6F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Parse.framework; sourceTree = "<group>"; };
 		BFC9B93419BD274B00726C6F /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -197,9 +201,11 @@
 				BFC9B93519BD274B00726C6F /* StartViewController.xib */,
 				BFC9B93819BD3EBE00726C6F /* AuthViewController.swift */,
 				BFC9B93919BD3EBE00726C6F /* AuthViewController.xib */,
-				BFE0649A19C137CF008CBC5A /* TabBarController.swift */,
 				BFDD619819C642CA008FEA3D /* FeedViewController.swift */,
 				BFDD619919C642CA008FEA3D /* FeedViewController.xib */,
+				BF79418619CA4B7200817D9E /* SearchViewController.swift */,
+				BF79418719CA4B7200817D9E /* SearchViewController.xib */,
+				BFE0649A19C137CF008CBC5A /* TabBarController.swift */,
 				BFDD619C19C64687008FEA3D /* PostCell.swift */,
 				BFDD619D19C64687008FEA3D /* PostCell.xib */,
 			);
@@ -298,6 +304,7 @@
 			files = (
 				BF4E9A5F19BD055200160802 /* Images.xcassets in Resources */,
 				BFC9B93B19BD3EBE00726C6F /* AuthViewController.xib in Resources */,
+				BF79418919CA4B7200817D9E /* SearchViewController.xib in Resources */,
 				BFDD619F19C64687008FEA3D /* PostCell.xib in Resources */,
 				BFDD619B19C642CA008FEA3D /* FeedViewController.xib in Resources */,
 				BFC9B93719BD274B00726C6F /* StartViewController.xib in Resources */,
@@ -319,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF3E3FBE19C63DD8002BA105 /* NetworkManager.swift in Sources */,
+				BF79418819CA4B7200817D9E /* SearchViewController.swift in Sources */,
 				BFF7D57919C91E1A007F5D99 /* UIColor+Extensions.swift in Sources */,
 				BFE0649919C1225B008CBC5A /* String+Extensions.swift in Sources */,
 				BF4E9A5819BD055200160802 /* AppDelegate.swift in Sources */,
