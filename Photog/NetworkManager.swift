@@ -10,6 +10,7 @@ import Foundation
 
 typealias ObjectsCompletionHandler = (objects: [AnyObject]?, error: NSError?) -> ()
 typealias ImageCompletionHandler = (image: UIImage?, error: NSError?) -> ()
+typealias BooleanCompletionHandler = (isFollowing: Bool?, error: NSError?) -> ()
 
 public class NetworkManager
 {
@@ -108,6 +109,27 @@ public class NetworkManager
                 completionHandler(objects: objects, error: nil)
             }
             
+        }
+    }
+    
+    func isFollowing(user: PFUser!, completionHandler: BooleanCompletionHandler!)
+    {
+        var relation = PFUser.currentUser().relationForKey("following")
+        var query = relation.query()
+        query.whereKey("username", equalTo: user.username)
+        query.findObjectsInBackgroundWithBlock {
+            (objects, error) -> Void in
+            
+            if (error != nil)
+            {
+                println("error determining if currentUser follows other user")
+                completionHandler(isFollowing: false, error: error)
+            }
+            else
+            {
+                var isFollowing = objects.count > 0
+                completionHandler(isFollowing:isFollowing, error: nil)
+            }
         }
     }
     
