@@ -8,6 +8,7 @@
 
 import Foundation
 
+typealias ErrorCompletionHandler = (error: NSError?) -> ()
 typealias ObjectsCompletionHandler = (objects: [AnyObject]?, error: NSError?) -> ()
 typealias ImageCompletionHandler = (image: UIImage?, error: NSError?) -> ()
 typealias BooleanCompletionHandler = (isFollowing: Bool?, error: NSError?) -> ()
@@ -132,5 +133,36 @@ public class NetworkManager
             }
         }
     }
+        
+    func follow(user: PFUser!, completionHandler: ErrorCompletionHandler!)
+    {
+        var relation = PFUser.currentUser().relationForKey("following")
+        relation.addObject(user)
+        PFUser.currentUser().saveInBackgroundWithBlock {
+            (success, error) -> Void in
+            
+            if (error != nil)
+            {
+                println("Error following user")
+            }
+
+            completionHandler(error: error)
+        }
+    }
     
+    func unfollow(user: PFUser!, completionHandler: ErrorCompletionHandler!)
+    {
+        var relation = PFUser.currentUser().relationForKey("following")
+        relation.removeObject(user)
+        PFUser.currentUser().saveInBackgroundWithBlock {
+            (success, error) -> Void in
+            
+            if (error != nil)
+            {
+                println("Error following user")
+            }
+            
+            completionHandler(error: error)
+        }
+    }
 }
