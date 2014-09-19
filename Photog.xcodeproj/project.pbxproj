@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF25DD7019CBAAEB00D879CC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF25DD6E19CBAAEB00D879CC /* ProfileViewController.swift */; };
+		BF25DD7119CBAAEB00D879CC /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF25DD6F19CBAAEB00D879CC /* ProfileViewController.xib */; };
 		BF3E3FBE19C63DD8002BA105 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3E3FBD19C63DD8002BA105 /* NetworkManager.swift */; };
 		BF4E9A5819BD055200160802 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4E9A5719BD055200160802 /* AppDelegate.swift */; };
 		BF4E9A5F19BD055200160802 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF4E9A5E19BD055200160802 /* Images.xcassets */; };
@@ -52,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF25DD6E19CBAAEB00D879CC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BF25DD6F19CBAAEB00D879CC /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		BF3E3FBD19C63DD8002BA105 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BF4E9A5219BD055200160802 /* Photog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF4E9A5619BD055200160802 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -209,6 +213,8 @@
 				BFDD619919C642CA008FEA3D /* FeedViewController.xib */,
 				BF79418619CA4B7200817D9E /* SearchViewController.swift */,
 				BF79418719CA4B7200817D9E /* SearchViewController.xib */,
+				BF25DD6E19CBAAEB00D879CC /* ProfileViewController.swift */,
+				BF25DD6F19CBAAEB00D879CC /* ProfileViewController.xib */,
 				BFE0649A19C137CF008CBC5A /* TabBarController.swift */,
 				BFDD619C19C64687008FEA3D /* PostCell.swift */,
 				BFDD619D19C64687008FEA3D /* PostCell.xib */,
@@ -310,6 +316,7 @@
 			files = (
 				BF4E9A5F19BD055200160802 /* Images.xcassets in Resources */,
 				BFC9B93B19BD3EBE00726C6F /* AuthViewController.xib in Resources */,
+				BF25DD7119CBAAEB00D879CC /* ProfileViewController.xib in Resources */,
 				BF79418D19CA59DC00817D9E /* PersonCell.xib in Resources */,
 				BF79418919CA4B7200817D9E /* SearchViewController.xib in Resources */,
 				BFDD619F19C64687008FEA3D /* PostCell.xib in Resources */,
@@ -342,6 +349,7 @@
 				BFC9B93A19BD3EBE00726C6F /* AuthViewController.swift in Sources */,
 				BFE0649B19C137CF008CBC5A /* TabBarController.swift in Sources */,
 				BFC9B93619BD274B00726C6F /* StartViewController.swift in Sources */,
+				BF25DD7019CBAAEB00D879CC /* ProfileViewController.swift in Sources */,
 				BFDD619A19C642CA008FEA3D /* FeedViewController.swift in Sources */,
 				BFDD619E19C64687008FEA3D /* PostCell.swift in Sources */,
 			);

@@ -32,6 +32,9 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
     {
         searchBar.text = ""
         
+        self.searchResults = []
+        self.tableView?.reloadData()
+        
         searchBar.setShowsCancelButton(true, animated: true)
     }
     

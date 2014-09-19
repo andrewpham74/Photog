@@ -159,4 +159,24 @@ public class NetworkManager
         }
     }
     
+    func fetchPosts(user: PFUser!, completionHandler: ObjectsCompletionHandler)
+    {
+        var postQuery = PFQuery(className: "Post")
+        postQuery.whereKey("User", equalTo: user)
+        postQuery.orderByDescending("createdAt")
+        postQuery.findObjectsInBackgroundWithBlock({ (objects: [AnyObject]!, error: NSError!) -> Void in
+            
+            if (error != nil)
+            {
+                println("error fetching feed posts")
+                completionHandler(objects: nil, error: error)
+            }
+            else
+            {
+                completionHandler(objects: objects, error: nil)
+            }
+            
+        })
+    }
+    
 }
