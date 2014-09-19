@@ -51,12 +51,7 @@ class TabBarController: UITabBarController {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationItem.title = "Photog"
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+        
     func didTapSignOut(sender: AnyObject)
     {
         PFUser.logOut()

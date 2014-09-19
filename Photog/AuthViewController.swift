@@ -61,12 +61,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+        
     func textFieldShouldReturn(textField: UITextField) -> Bool
     {
         if (textField == self.emailTextField)
@@ -111,7 +106,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         PFUser.logInWithUsernameInBackground(email, password: password) {
             (user: PFUser!, error: NSError!) -> Void in
             
-            if (user != nil)
+            if let constUser = user
             {
                 var tabBarController = TabBarController()
                 self.navigationController?.pushViewController(tabBarController, animated: true)
@@ -133,29 +128,26 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool!, error: NSError!) -> Void in
             
-            if error == nil
-            {
-                // New user follows him/herself
-                NetworkManager.sharedInstance.follow(user, completionHandler: {
-                    (error) -> () in
-                    
-                    if error == nil
-                    {
-                        var tabBarController = TabBarController()
-                        self.navigationController?.pushViewController(tabBarController, animated: true)
-                    }
-                    else
-                    {
-                        println("Unable for user to follow themself")
-                    }
-                    
-                })
-                
-            }
-            else
+            if let constError = error
             {
                 println("sign up failure! (alert the user)")
+                return
             }
+            
+            // New user follows him/herself
+            NetworkManager.sharedInstance.follow(user, completionHandler: {
+                (error) -> () in
+                
+                if let constError = error
+                {
+                    println("Unable for user to follow themself")
+                    return
+                }
+
+                var tabBarController = TabBarController()
+                self.navigationController?.pushViewController(tabBarController, animated: true)
+                
+            })
         }
     }    
 }

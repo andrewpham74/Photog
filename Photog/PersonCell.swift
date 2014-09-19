@@ -39,12 +39,6 @@ class PersonCell: UITableViewCell {
         self.textLabel?.text = ""
         self.user = nil
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     func configure()
     {

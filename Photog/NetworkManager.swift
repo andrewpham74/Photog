@@ -43,10 +43,10 @@ public class NetworkManager
         var query = relation.query()
         query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]!, error: NSError!) -> Void in
             
-            if (error != nil)
+            if let constError = error
             {
                 println("error fetching following")
-                completionHandler(objects: nil, error: error)
+                completionHandler(objects: nil, error: constError)
             }
             else
             {
@@ -54,16 +54,8 @@ public class NetworkManager
                 postQuery.whereKey("User", containedIn: objects)
                 postQuery.orderByDescending("createdAt")
                 postQuery.findObjectsInBackgroundWithBlock({ (objects: [AnyObject]!, error: NSError!) -> Void in
-                    
-                    if (error != nil)
-                    {
-                        println("error fetching feed posts")
-                        completionHandler(objects: nil, error: error)
-                    }
-                    else
-                    {
-                        completionHandler(objects: objects, error: nil)
-                    }
+
+                    completionHandler(objects: objects, error: error)
                     
                 })
             }
@@ -76,10 +68,10 @@ public class NetworkManager
         imageReference.getDataInBackgroundWithBlock {
             (data, error) -> Void in
          
-            if (error != nil)
+            if let constError = error
             {
-                println("Error fetching image \(error.localizedDescription)")
-                completionHandler(image: nil, error: error)
+                println("Error fetching image \(constError.localizedDescription)")
+                completionHandler(image: nil, error: constError)
             }
             else
             {
@@ -100,16 +92,8 @@ public class NetworkManager
         query.findObjectsInBackgroundWithBlock {
             (objects, error) -> Void in
          
-            if (error != nil)
-            {
-                println("error searching for users")
-                completionHandler(objects: nil, error: error)
-            }
-            else
-            {
-                completionHandler(objects: objects, error: nil)
-            }
-            
+            completionHandler(objects: objects, error: error)
+
         }
     }
     
@@ -121,7 +105,7 @@ public class NetworkManager
         query.findObjectsInBackgroundWithBlock {
             (objects, error) -> Void in
             
-            if (error != nil)
+            if let constError = error
             {
                 println("error determining if currentUser follows other user")
                 completionHandler(isFollowing: false, error: error)
@@ -138,7 +122,7 @@ public class NetworkManager
     {
         var relation = PFUser.currentUser().relationForKey("following")
         
-        if (value == true)
+        if value == true
         {
             relation.addObject(user)
         }
@@ -149,11 +133,6 @@ public class NetworkManager
         
         PFUser.currentUser().saveInBackgroundWithBlock {
             (success, error) -> Void in
-            
-            if (error != nil)
-            {
-                println("Error following/unfollowing user")
-            }
             
             completionHandler(error: error)
         }
@@ -166,15 +145,7 @@ public class NetworkManager
         postQuery.orderByDescending("createdAt")
         postQuery.findObjectsInBackgroundWithBlock({ (objects: [AnyObject]!, error: NSError!) -> Void in
             
-            if (error != nil)
-            {
-                println("error fetching feed posts")
-                completionHandler(objects: nil, error: error)
-            }
-            else
-            {
-                completionHandler(objects: objects, error: nil)
-            }
+            completionHandler(objects: objects, error: error)
             
         })
     }

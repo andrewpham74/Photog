@@ -16,12 +16,7 @@ class StartViewController: UIViewController {
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+        
     @IBAction func didTapSignIn(sender: AnyObject)
     {
         var viewController = AuthViewController(nibName: "AuthViewController", bundle: nil)

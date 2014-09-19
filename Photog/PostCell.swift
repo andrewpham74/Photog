@@ -41,13 +41,7 @@ class PostCell: UITableViewCell {
         self.dateLabel?.text = nil
         self.post = nil
     }
-    
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
+        
     func configure()
     {
         self.postImageView!.clipsToBounds = true

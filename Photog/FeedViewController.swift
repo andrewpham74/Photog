@@ -33,16 +33,11 @@ class FeedViewController: UIViewController, UITableViewDataSource
                 self.items = constObjects
                 self.tableView?.reloadData()
             }
-            else if let constError = error
+            else
             {
                 // Alert the user
             }
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
