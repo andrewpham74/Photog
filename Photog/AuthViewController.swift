@@ -86,8 +86,8 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         
         if (email?.isEmpty == true || password?.isEmpty == true || email?.isEmailAddress() == false) // is this an email address
         {
-            // alert the user (homework)
-
+            self.showAlert("Please check your email address and password")
+            
             return
         }
         
@@ -113,7 +113,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
             }
             else
             {
-                println("sign in failure! (alert the user)")
+                self.showAlert("Sign in failure, check your credentials and try again.")
             }
         }
     }
@@ -130,7 +130,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
             
             if let constError = error
             {
-                println("sign up failure! (alert the user)")
+                self.showAlert("Sign up failure!")
                 return
             }
             
@@ -140,7 +140,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
                 
                 if let constError = error
                 {
-                    println("Unable for user to follow themself")
+                    self.showAlert("Unable for user to follow themself")
                     return
                 }
 

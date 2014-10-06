@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
+class TabBarController: UITabBarController, UITabBarControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     override func viewDidLoad()
     {
@@ -41,6 +41,8 @@ class TabBarController: UITabBarController {
         self.navigationItem.hidesBackButton = true
         self.tabBar.translucent = false
         
+        self.delegate = self
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .Done, target: self, action: "didTapSignOut:")
     }
     
@@ -59,4 +61,52 @@ class TabBarController: UITabBarController {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
+    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool
+    {
+        var cameraViewController = self.viewControllers![3] as UIViewController
+        if viewController == cameraViewController
+        {
+            showCamera()
+            return false
+        }
+        
+        return true
+    }
+    
+    func showCamera()
+    {
+        if !UIImagePickerController.isSourceTypeAvailable(.Camera)
+        {
+            self.showAlert("Camera is not available")
+            return
+        }
+        
+        var viewController = UIImagePickerController()
+        viewController.sourceType = .Camera
+        viewController.delegate = self
+        
+        self.presentViewController(viewController, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
+    {
+        var image: UIImage = info[UIImagePickerControllerOriginalImage] as UIImage
+
+        var targetWidth = UIScreen.mainScreen().scale * UIScreen.mainScreen().bounds.size.width
+        var resizedImage = image.resize(targetWidth)
+        
+        picker.dismissViewControllerAnimated(true, completion: {
+            () -> Void in
+          
+            NetworkManager.sharedInstance.postImage(resizedImage, completionHandler: {
+                (error) -> () in
+                
+                if let constError = error
+                {
+                    self.showAlert(constError.localizedDescription)
+                }
+            })
+            
+        })
+    }
 }

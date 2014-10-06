@@ -31,7 +31,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
             
             if let constError = error
             {
-                // alert the user
+                self.showAlert("Unable to fetch posts")
             }
             else
             {

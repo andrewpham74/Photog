@@ -35,7 +35,7 @@ class FeedViewController: UIViewController, UITableViewDataSource
             }
             else
             {
-                // Alert the user
+                self.showAlert("Unable to fetch Feed")
             }
         }
     }

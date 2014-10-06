@@ -64,7 +64,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
             }
             else if let constError = error
             {
-                // Alert the user
+                self.showAlert("Unable to conduct search")
             }
         })
     }

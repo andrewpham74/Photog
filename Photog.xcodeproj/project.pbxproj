@@ -27,6 +27,8 @@
 		BF79418919CA4B7200817D9E /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF79418719CA4B7200817D9E /* SearchViewController.xib */; };
 		BF79418C19CA59DC00817D9E /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF79418A19CA59DC00817D9E /* PersonCell.swift */; };
 		BF79418D19CA59DC00817D9E /* PersonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF79418B19CA59DC00817D9E /* PersonCell.xib */; };
+		BFC5464619E1DFC50038CD45 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC5464519E1DFC50038CD45 /* UIViewController+Extensions.swift */; };
+		BFC5464819E1EE910038CD45 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC5464719E1EE910038CD45 /* UIImage+Extensions.swift */; };
 		BFC9B92719BD1ADA00726C6F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC9B92519BD1ADA00726C6F /* Bolts.framework */; };
 		BFC9B92819BD1ADA00726C6F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC9B92619BD1ADA00726C6F /* Parse.framework */; };
 		BFC9B93619BD274B00726C6F /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9B93419BD274B00726C6F /* StartViewController.swift */; };
@@ -79,6 +81,8 @@
 		BF79418719CA4B7200817D9E /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		BF79418A19CA59DC00817D9E /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		BF79418B19CA59DC00817D9E /* PersonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonCell.xib; sourceTree = "<group>"; };
+		BFC5464519E1DFC50038CD45 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		BFC5464719E1EE910038CD45 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		BFC9B92519BD1ADA00726C6F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../Bolts.framework; sourceTree = "<group>"; };
 		BFC9B92619BD1ADA00726C6F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Parse.framework; sourceTree = "<group>"; };
 		BFC9B93419BD274B00726C6F /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +234,8 @@
 				BFE0649819C1225B008CBC5A /* String+Extensions.swift */,
 				BFF7D57619C90FFC007F5D99 /* NSDate+Extensions.swift */,
 				BFF7D57819C91E1A007F5D99 /* UIColor+Extensions.swift */,
+				BFC5464519E1DFC50038CD45 /* UIViewController+Extensions.swift */,
+				BFC5464719E1EE910038CD45 /* UIImage+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -283,6 +289,7 @@
 				TargetAttributes = {
 					BF4E9A5119BD055200160802 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = J5RN3FF683;
 					};
 					BF4E9A6319BD055200160802 = {
 						CreatedOnToolsVersion = 6.0;
@@ -349,7 +356,9 @@
 				BFC9B93A19BD3EBE00726C6F /* AuthViewController.swift in Sources */,
 				BFE0649B19C137CF008CBC5A /* TabBarController.swift in Sources */,
 				BFC9B93619BD274B00726C6F /* StartViewController.swift in Sources */,
+				BFC5464619E1DFC50038CD45 /* UIViewController+Extensions.swift in Sources */,
 				BF25DD7019CBAAEB00D879CC /* ProfileViewController.swift in Sources */,
+				BFC5464819E1EE910038CD45 /* UIImage+Extensions.swift in Sources */,
 				BFDD619A19C642CA008FEA3D /* FeedViewController.swift in Sources */,
 				BFDD619E19C64687008FEA3D /* PostCell.swift in Sources */,
 			);
@@ -457,16 +466,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/onemonth/Desktop/parse-library-1.2.21",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Photog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Photog/Photog-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -476,15 +490,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Chris Castiglione (J5RN3FF683)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chris Castiglione (J5RN3FF683)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/onemonth/Desktop/parse-library-1.2.21",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Photog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a0751911-b192-49e3-a1cf-c5cf7bdbff36";
 				SWIFT_OBJC_BRIDGING_HEADER = "Photog/Photog-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
