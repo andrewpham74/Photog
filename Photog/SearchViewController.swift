@@ -37,17 +37,17 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
         
         searchBar.setShowsCancelButton(true, animated: true)
     }
-    
+
     func searchBarTextDidEndEditing(searchBar: UISearchBar)
     {
         searchBar.setShowsCancelButton(false, animated: true)
     }
-    
+
     func searchBarCancelButtonClicked(searchBar: UISearchBar)
     {
         searchBar.resignFirstResponder()
     }
-    
+
     func searchBarSearchButtonClicked(searchBar: UISearchBar)
     {
         searchBar.resignFirstResponder()
@@ -73,7 +73,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
     {
         return self.searchResults.count
     }
-    
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("PersonCellIdentifier") as PersonCell

@@ -29,11 +29,11 @@ class PersonCell: UITableViewCell {
         self.isFollowing = false
         self.followButton?.hidden = true
     }
-    
+
     override func prepareForReuse()
     {
         super.prepareForReuse()
-    
+
         self.isFollowing = false
         self.followButton?.hidden = true
         self.textLabel?.text = ""
@@ -80,7 +80,7 @@ class PersonCell: UITableViewCell {
             // else: configure the button to follow
         }
     }
-    
+
     @IBAction func didTapFollow(sender: UIButton)
     {
         self.followButton?.enabled = false

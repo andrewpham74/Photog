@@ -41,7 +41,7 @@ class PostCell: UITableViewCell {
         self.dateLabel?.text = nil
         self.post = nil
     }
-        
+    
     func configure()
     {
         self.postImageView!.clipsToBounds = true
