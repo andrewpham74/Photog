@@ -27,7 +27,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
     {
         super.viewWillAppear(animated)
     
-        NetworkManager.sharedInstance.fetchPosts(self.user, completionHandler: { (objects, error) -> () in
+        NetworkManager.sharedInstance.fetchPosts(self.user!, completionHandler: { (objects, error) -> () in
             
             if let constError = error
             {

@@ -25,7 +25,7 @@ public class NetworkManager
         return Singleton.instance
     }
     
-    func follow(user: PFUser!, completionHandler:(error: NSError?) -> ())
+    func follow(user: PFUser, completionHandler: ErrorCompletionHandler)
     {
         var relation = PFUser.currentUser().relationForKey("following")
         relation.addObject(user)
@@ -37,7 +37,7 @@ public class NetworkManager
         }
     }
     
-    func fetchFeed(completionHandler: ObjectsCompletionHandler!)
+    func fetchFeed(completionHandler: ObjectsCompletionHandler)
     {
         var relation = PFUser.currentUser().relationForKey("following")
         var query = relation.query()
@@ -62,7 +62,7 @@ public class NetworkManager
         }
     }
 
-    func fetchImage(post: PFObject!, completionHandler: ImageCompletionHandler!)
+    func fetchImage(post: PFObject, completionHandler: ImageCompletionHandler)
     {
         var imageReference = post["Image"] as PFFile
         imageReference.getDataInBackgroundWithBlock {
@@ -81,7 +81,7 @@ public class NetworkManager
         }
     }
     
-    func findUsers(searchTerm: String!, completionHandler: ObjectsCompletionHandler!)
+    func findUsers(searchTerm: String, completionHandler: ObjectsCompletionHandler)
     {
         var query = PFUser.query()
         query.whereKey("username", containsString: searchTerm)
@@ -97,7 +97,7 @@ public class NetworkManager
         }
     }
     
-    func isFollowing(user: PFUser!, completionHandler: BooleanCompletionHandler!)
+    func isFollowing(user: PFUser, completionHandler: BooleanCompletionHandler)
     {
         var relation = PFUser.currentUser().relationForKey("following")
         var query = relation.query()
@@ -118,7 +118,7 @@ public class NetworkManager
         }
     }
     
-    func updateFollowValue(value: Bool, user: PFUser!, completionHandler: ErrorCompletionHandler!)
+    func updateFollowValue(value: Bool, user: PFUser, completionHandler: ErrorCompletionHandler)
     {
         var relation = PFUser.currentUser().relationForKey("following")
         
@@ -138,7 +138,7 @@ public class NetworkManager
         }
     }
     
-    func fetchPosts(user: PFUser!, completionHandler: ObjectsCompletionHandler)
+    func fetchPosts(user: PFUser, completionHandler: ObjectsCompletionHandler)
     {
         var postQuery = PFQuery(className: "Post")
         postQuery.whereKey("User", equalTo: user)
@@ -150,7 +150,7 @@ public class NetworkManager
         })
     }
     
-    func postImage(image: UIImage, completionHandler: ErrorCompletionHandler?)
+    func postImage(image: UIImage, completionHandler: ErrorCompletionHandler)
     {
         var imageData = UIImagePNGRepresentation(image) // returns NSData
         var imageFile = PFFile(name: "image.png", data: imageData)
@@ -167,10 +167,7 @@ public class NetworkManager
                 println("Error uploading post object")
             }
             
-            if let constCompletionHandler = completionHandler
-            {
-                constCompletionHandler(error: error)
-            }
+            completionHandler(error: error)
         }
     }
     

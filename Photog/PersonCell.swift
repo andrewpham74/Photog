@@ -74,10 +74,6 @@ class PersonCell: UITableViewCell {
                 }
                 
             })
-            
-            // if so: configure the button to unfollow
-            
-            // else: configure the button to follow
         }
     }
 
@@ -86,7 +82,7 @@ class PersonCell: UITableViewCell {
         self.followButton?.enabled = false
         
         var newValue = !(self.isFollowing == true)
-        NetworkManager.sharedInstance.updateFollowValue(newValue, user: self.user) { (error) -> () in
+        NetworkManager.sharedInstance.updateFollowValue(newValue, user: self.user!) { (error) -> () in
             
             self.followButton?.enabled = true
             
