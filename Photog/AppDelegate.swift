@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setupParse()
     {
-        Parse.setApplicationId("nLNOOBOavu5nKZrnb1JdOvLh1FxKYalzZgF4ZnN5", clientKey:"7ukuItEQufVuTumGrE5zG1fi8vpYDDXH45rNKpkv")
+        Parse.setApplicationId("YOUR APP ID HERE", clientKey:"YOUR CLIENT KEY HERE")
         
 //        var testObject = PFObject(className: "TestObject")
 //        testObject["foo"] = "bar"
