@@ -54,19 +54,19 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
         
         var searchTerm = searchBar.text
         
-        NetworkManager.sharedInstance.findUsers(searchTerm, completionHandler: {
-            (objects, error) -> () in
-            
-            if let constObjects = objects
-            {
-                self.searchResults = constObjects
-                self.tableView?.reloadData()
-            }
-            else if let constError = error
-            {
-                self.showAlert("Unable to conduct search")
-            }
-        })
+//        NetworkManager.sharedInstance.findUsers(searchTerm, completionHandler: {
+//            (objects, error) -> () in
+//            
+//            if let constObjects = objects
+//            {
+//                self.searchResults = constObjects
+//                self.tableView?.reloadData()
+//            }
+//            else if let constError = error
+//            {
+//                self.showAlert("Unable to conduct search")
+//            }
+//        })
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int

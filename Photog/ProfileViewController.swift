@@ -27,19 +27,19 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
     {
         super.viewWillAppear(animated)
     
-        NetworkManager.sharedInstance.fetchPosts(self.user!, completionHandler: { (objects, error) -> () in
-            
-            if let constError = error
-            {
-                self.showAlert("Unable to fetch posts")
-            }
-            else
-            {
-                self.items = objects!
-                self.tableView?.reloadData()
-            }
-            
-        })
+//        NetworkManager.sharedInstance.fetchPosts(self.user!, completionHandler: { (objects, error) -> () in
+//            
+//            if let constError = error
+//            {
+//                self.showAlert("Unable to fetch posts")
+//            }
+//            else
+//            {
+//                self.items = objects!
+//                self.tableView?.reloadData()
+//            }
+//            
+//        })
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -50,7 +50,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("PostCellIdentifier") as PostCell
-        var item = items[indexPath.row] as PFObject
+        var item = items[indexPath.row] as NSDictionary
         
         cell.post = item
         

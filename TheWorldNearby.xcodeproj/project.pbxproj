@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3308B2171A35290A001367E5 /* SwiftHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3308B2101A352902001367E5 /* SwiftHTTP.framework */; };
+		3308B2231A353289001367E5 /* SwiftHTTP.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3308B2101A352902001367E5 /* SwiftHTTP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3335CC771A3543D200E4CFBA /* CreatePinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3335CC751A3543D200E4CFBA /* CreatePinViewController.swift */; };
+		3335CC781A3543D200E4CFBA /* CreatePinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3335CC761A3543D200E4CFBA /* CreatePinViewController.xib */; };
+		337C5ADC1A43B66A002CE25F /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337C5ADA1A43B66A002CE25F /* SelectViewController.swift */; };
+		337C5ADD1A43B66A002CE25F /* SelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 337C5ADB1A43B66A002CE25F /* SelectViewController.xib */; };
 		BF25DD7019CBAAEB00D879CC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF25DD6E19CBAAEB00D879CC /* ProfileViewController.swift */; };
 		BF25DD7119CBAAEB00D879CC /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF25DD6F19CBAAEB00D879CC /* ProfileViewController.xib */; };
 		BF3E3FBE19C63DD8002BA105 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3E3FBD19C63DD8002BA105 /* NetworkManager.swift */; };
@@ -46,6 +52,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3308B20F1A352902001367E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3308B2081A352902001367E5 /* SwiftHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6BFD901619C8D8B500DD99B6;
+			remoteInfo = SwiftHTTP;
+		};
+		3308B2111A352902001367E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3308B2081A352902001367E5 /* SwiftHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6BFD902119C8D8B500DD99B6;
+			remoteInfo = SwiftHTTPTests;
+		};
+		3308B2131A352902001367E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3308B2081A352902001367E5 /* SwiftHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D958025919E6EEEB003C8218;
+			remoteInfo = SwiftHTTPOSX;
+		};
+		3308B2151A352902001367E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3308B2081A352902001367E5 /* SwiftHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D958026319E6EEEB003C8218;
+			remoteInfo = SwiftHTTPOSXTests;
+		};
 		BF4E9A6519BD055200160802 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BF4E9A4A19BD055200160802 /* Project object */;
@@ -55,15 +89,33 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3308B21E1A3531DE001367E5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3308B2231A353289001367E5 /* SwiftHTTP.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3308B2081A352902001367E5 /* SwiftHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftHTTP.xcodeproj; path = "../../../../Downloads/SwiftHTTP-master 2/SwiftHTTP.xcodeproj"; sourceTree = "<group>"; };
+		3335CC751A3543D200E4CFBA /* CreatePinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePinViewController.swift; sourceTree = "<group>"; };
+		3335CC761A3543D200E4CFBA /* CreatePinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatePinViewController.xib; sourceTree = "<group>"; };
+		337C5ADA1A43B66A002CE25F /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
+		337C5ADB1A43B66A002CE25F /* SelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectViewController.xib; sourceTree = "<group>"; };
 		BF25DD6E19CBAAEB00D879CC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BF25DD6F19CBAAEB00D879CC /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		BF3E3FBD19C63DD8002BA105 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		BF4E9A5219BD055200160802 /* Photog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF4E9A5219BD055200160802 /* TheWorldNearby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheWorldNearby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF4E9A5619BD055200160802 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF4E9A5719BD055200160802 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF4E9A5E19BD055200160802 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		BF4E9A6419BD055200160802 /* PhotogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF4E9A6419BD055200160802 /* TheWorldNearbyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheWorldNearbyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF4E9A6919BD055200160802 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF4E9A6A19BD055200160802 /* PhotogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotogTests.swift; sourceTree = "<group>"; };
 		BF4E9A7819BD0E2400160802 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -104,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3308B2171A35290A001367E5 /* SwiftHTTP.framework in Frameworks */,
 				BF4E9A8B19BD0E5F00160802 /* SystemConfiguration.framework in Frameworks */,
 				BF4E9A8919BD0E5700160802 /* StoreKit.framework in Frameworks */,
 				BF4E9A8719BD0E5200160802 /* Security.framework in Frameworks */,
@@ -129,9 +182,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3308B2091A352902001367E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3308B2101A352902001367E5 /* SwiftHTTP.framework */,
+				3308B2121A352902001367E5 /* SwiftHTTPTests.xctest */,
+				3308B2141A352902001367E5 /* SwiftHTTPOSX.framework */,
+				3308B2161A352902001367E5 /* SwiftHTTPOSXTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		BF4E9A4919BD055200160802 = {
 			isa = PBXGroup;
 			children = (
+				3308B2081A352902001367E5 /* SwiftHTTP.xcodeproj */,
 				BF4E9A5419BD055200160802 /* Photog */,
 				BF4E9A6719BD055200160802 /* PhotogTests */,
 				BF4E9A5319BD055200160802 /* Products */,
@@ -141,8 +206,8 @@
 		BF4E9A5319BD055200160802 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BF4E9A5219BD055200160802 /* Photog.app */,
-				BF4E9A6419BD055200160802 /* PhotogTests.xctest */,
+				BF4E9A5219BD055200160802 /* TheWorldNearby.app */,
+				BF4E9A6419BD055200160802 /* TheWorldNearbyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -224,6 +289,10 @@
 				BFDD619D19C64687008FEA3D /* PostCell.xib */,
 				BF79418A19CA59DC00817D9E /* PersonCell.swift */,
 				BF79418B19CA59DC00817D9E /* PersonCell.xib */,
+				3335CC751A3543D200E4CFBA /* CreatePinViewController.swift */,
+				3335CC761A3543D200E4CFBA /* CreatePinViewController.xib */,
+				337C5ADA1A43B66A002CE25F /* SelectViewController.swift */,
+				337C5ADB1A43B66A002CE25F /* SelectViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -243,26 +312,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BF4E9A5119BD055200160802 /* Photog */ = {
+		BF4E9A5119BD055200160802 /* TheWorldNearby */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF4E9A6E19BD055200160802 /* Build configuration list for PBXNativeTarget "Photog" */;
+			buildConfigurationList = BF4E9A6E19BD055200160802 /* Build configuration list for PBXNativeTarget "TheWorldNearby" */;
 			buildPhases = (
 				BF4E9A4E19BD055200160802 /* Sources */,
 				BF4E9A4F19BD055200160802 /* Frameworks */,
 				BF4E9A5019BD055200160802 /* Resources */,
+				3308B21E1A3531DE001367E5 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Photog;
+			name = TheWorldNearby;
 			productName = Photog;
-			productReference = BF4E9A5219BD055200160802 /* Photog.app */;
+			productReference = BF4E9A5219BD055200160802 /* TheWorldNearby.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BF4E9A6319BD055200160802 /* PhotogTests */ = {
+		BF4E9A6319BD055200160802 /* TheWorldNearbyTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF4E9A7119BD055200160802 /* Build configuration list for PBXNativeTarget "PhotogTests" */;
+			buildConfigurationList = BF4E9A7119BD055200160802 /* Build configuration list for PBXNativeTarget "TheWorldNearbyTests" */;
 			buildPhases = (
 				BF4E9A6019BD055200160802 /* Sources */,
 				BF4E9A6119BD055200160802 /* Frameworks */,
@@ -273,9 +343,9 @@
 			dependencies = (
 				BF4E9A6619BD055200160802 /* PBXTargetDependency */,
 			);
-			name = PhotogTests;
+			name = TheWorldNearbyTests;
 			productName = PhotogTests;
-			productReference = BF4E9A6419BD055200160802 /* PhotogTests.xctest */;
+			productReference = BF4E9A6419BD055200160802 /* TheWorldNearbyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -289,15 +359,16 @@
 				TargetAttributes = {
 					BF4E9A5119BD055200160802 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = J5RN3FF683;
+						DevelopmentTeam = RENEPZX45H;
 					};
 					BF4E9A6319BD055200160802 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = RENEPZX45H;
 						TestTargetID = BF4E9A5119BD055200160802;
 					};
 				};
 			};
-			buildConfigurationList = BF4E9A4D19BD055200160802 /* Build configuration list for PBXProject "Photog" */;
+			buildConfigurationList = BF4E9A4D19BD055200160802 /* Build configuration list for PBXProject "TheWorldNearby" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -308,19 +379,57 @@
 			mainGroup = BF4E9A4919BD055200160802;
 			productRefGroup = BF4E9A5319BD055200160802 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3308B2091A352902001367E5 /* Products */;
+					ProjectRef = 3308B2081A352902001367E5 /* SwiftHTTP.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
-				BF4E9A5119BD055200160802 /* Photog */,
-				BF4E9A6319BD055200160802 /* PhotogTests */,
+				BF4E9A5119BD055200160802 /* TheWorldNearby */,
+				BF4E9A6319BD055200160802 /* TheWorldNearbyTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3308B2101A352902001367E5 /* SwiftHTTP.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftHTTP.framework;
+			remoteRef = 3308B20F1A352902001367E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3308B2121A352902001367E5 /* SwiftHTTPTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftHTTPTests.xctest;
+			remoteRef = 3308B2111A352902001367E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3308B2141A352902001367E5 /* SwiftHTTPOSX.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftHTTPOSX.framework;
+			remoteRef = 3308B2131A352902001367E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3308B2161A352902001367E5 /* SwiftHTTPOSXTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftHTTPOSXTests.xctest;
+			remoteRef = 3308B2151A352902001367E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BF4E9A5019BD055200160802 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				337C5ADD1A43B66A002CE25F /* SelectViewController.xib in Resources */,
 				BF4E9A5F19BD055200160802 /* Images.xcassets in Resources */,
 				BFC9B93B19BD3EBE00726C6F /* AuthViewController.xib in Resources */,
 				BF25DD7119CBAAEB00D879CC /* ProfileViewController.xib in Resources */,
@@ -328,6 +437,7 @@
 				BF79418919CA4B7200817D9E /* SearchViewController.xib in Resources */,
 				BFDD619F19C64687008FEA3D /* PostCell.xib in Resources */,
 				BFDD619B19C642CA008FEA3D /* FeedViewController.xib in Resources */,
+				3335CC781A3543D200E4CFBA /* CreatePinViewController.xib in Resources */,
 				BFC9B93719BD274B00726C6F /* StartViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,8 +456,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				337C5ADC1A43B66A002CE25F /* SelectViewController.swift in Sources */,
 				BF3E3FBE19C63DD8002BA105 /* NetworkManager.swift in Sources */,
 				BF79418819CA4B7200817D9E /* SearchViewController.swift in Sources */,
+				3335CC771A3543D200E4CFBA /* CreatePinViewController.swift in Sources */,
 				BFF7D57919C91E1A007F5D99 /* UIColor+Extensions.swift in Sources */,
 				BFE0649919C1225B008CBC5A /* String+Extensions.swift in Sources */,
 				BF4E9A5819BD055200160802 /* AppDelegate.swift in Sources */,
@@ -377,7 +489,7 @@
 /* Begin PBXTargetDependency section */
 		BF4E9A6619BD055200160802 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BF4E9A5119BD055200160802 /* Photog */;
+			target = BF4E9A5119BD055200160802 /* TheWorldNearby */;
 			targetProxy = BF4E9A6519BD055200160802 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -476,7 +588,7 @@
 				INFOPLIST_FILE = Photog/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TheWorldNearby;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Photog/Photog-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -500,7 +612,7 @@
 				INFOPLIST_FILE = Photog/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TheWorldNearby;
 				PROVISIONING_PROFILE = "a0751911-b192-49e3-a1cf-c5cf7bdbff36";
 				SWIFT_OBJC_BRIDGING_HEADER = "Photog/Photog-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -521,7 +633,7 @@
 				);
 				INFOPLIST_FILE = PhotogTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TheWorldNearbyTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -536,7 +648,7 @@
 				);
 				INFOPLIST_FILE = PhotogTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TheWorldNearbyTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
@@ -544,7 +656,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BF4E9A4D19BD055200160802 /* Build configuration list for PBXProject "Photog" */ = {
+		BF4E9A4D19BD055200160802 /* Build configuration list for PBXProject "TheWorldNearby" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF4E9A6C19BD055200160802 /* Debug */,
@@ -553,7 +665,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF4E9A6E19BD055200160802 /* Build configuration list for PBXNativeTarget "Photog" */ = {
+		BF4E9A6E19BD055200160802 /* Build configuration list for PBXNativeTarget "TheWorldNearby" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF4E9A6F19BD055200160802 /* Debug */,
@@ -562,7 +674,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF4E9A7119BD055200160802 /* Build configuration list for PBXNativeTarget "PhotogTests" */ = {
+		BF4E9A7119BD055200160802 /* Build configuration list for PBXNativeTarget "TheWorldNearbyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF4E9A7219BD055200160802 /* Debug */,

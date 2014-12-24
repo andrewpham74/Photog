@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftHTTP
 
 enum AuthMode
 {
@@ -103,51 +104,35 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     
     func signIn(email: String, password: String)
     {
-        PFUser.logInWithUsernameInBackground(email, password: password) {
-            (user: PFUser!, error: NSError!) -> Void in
-            
-            if let constUser = user
-            {
-                var tabBarController = TabBarController()
-                self.navigationController?.pushViewController(tabBarController, animated: true)
-            }
-            else
-            {
-                self.showAlert("Sign in failure, check your credentials and try again.")
-            }
-        }
+        var request = HTTPTask()
+        //we have to add the explicit type, else the wrong type is inferred. See the vluxe.io article for more info.
+        let params: Dictionary<String,AnyObject> = ["user_session": ["email": email, "password": password]]
+        request.POST("http://theworldnearby.com/user_sessions.json", parameters: params, success: {(response: HTTPResponse) in
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    var tabBarController = TabBarController()
+                    self.navigationController?.pushViewController(tabBarController, animated: true)
+                })
+            },failure: {(error: NSError, response: HTTPResponse?) in
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.showAlert("Sign in failure, check your credentials and try again.")
+                })
+        })
     }
     
     func signUp(email: String, password: String)
     {
-        var user = PFUser()
-        user.username = email
-        user.email = email
-        user.password = password
-        
-        user.signUpInBackgroundWithBlock {
-            (succeeded: Bool!, error: NSError!) -> Void in
-            
-            if let constError = error
-            {
-                self.showAlert("Sign up failure!")
-                return
-            }
-            
-            // New user follows him/herself
-            NetworkManager.sharedInstance.follow(user, completionHandler: {
-                (error) -> () in
-                
-                if let constError = error
-                {
-                    self.showAlert("Unable for user to follow themself")
-                    return
-                }
-
-                var tabBarController = TabBarController()
-                self.navigationController?.pushViewController(tabBarController, animated: true)
-                
-            })
-        }
-    }    
+        var request = HTTPTask()
+        //we have to add the explicit type, else the wrong type is inferred. See the vluxe.io article for more info.
+        let params: Dictionary<String,AnyObject> = ["user": ["name": email, "email": email, "password": password]]
+        request.POST("http://theworldnearby.com/customusers.json", parameters: params, success: {(response: HTTPResponse) in
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    var tabBarController = TabBarController()
+                    self.navigationController?.pushViewController(tabBarController, animated: true)
+                })
+            },failure: {(error: NSError, response: HTTPResponse?) in
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.showAlert("Sign up failure!")
+                })
+        })
+    }
 }

@@ -16,18 +16,21 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate, UIImageP
 
         var feedViewController = FeedViewController(nibName: "FeedViewController", bundle: nil)
         
-        var profileViewController = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
-        profileViewController.user = PFUser.currentUser()
+        var selectViewController = SelectViewController(nibName: "SelectViewController", bundle: nil)
         
         var searchViewController = SearchViewController(nibName: "SearchViewController", bundle: nil)
         
-        var cameraViewController = UIViewController()
-        cameraViewController.view.backgroundColor = UIColor.purpleColor()
+        var profileViewController = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
+//        profileViewController.user = PFUser.currentUser()
         
-        var viewControllers = [feedViewController, profileViewController, searchViewController, cameraViewController]
+        var cameraViewController = UIViewController()
+        cameraViewController.view.backgroundColor = UIColor.redColor()
+        
+        var viewControllers = [feedViewController, selectViewController, searchViewController, profileViewController,cameraViewController]
+        
         self.setViewControllers(viewControllers, animated: true)
         
-        var imageNames = ["FeedIcon", "ProfileIcon", "SearchIcon", "CameraIcon"]
+        var imageNames = ["FeedIcon", "SelectView", "SearchIcon", "ProfileIcon", "CameraIcon"]
         
         let tabItems = tabBar.items as [UITabBarItem]
         for (index, value) in enumerate(tabItems)
@@ -51,19 +54,19 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate, UIImageP
         super.viewWillAppear(animated)
     
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        self.navigationItem.title = "Photog"
+        self.navigationItem.title = "The World Nearby"
     }
         
     func didTapSignOut(sender: AnyObject)
     {
-        PFUser.logOut()
+//        PFUser.logOut()
         
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool
     {
-        var cameraViewController = self.viewControllers![3] as UIViewController
+        var cameraViewController = self.viewControllers![4] as UIViewController
         if viewController == cameraViewController
         {
             showCamera()
@@ -95,18 +98,24 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate, UIImageP
         var targetWidth = UIScreen.mainScreen().scale * UIScreen.mainScreen().bounds.size.width
         var resizedImage = image.resize(targetWidth)
         
+
         picker.dismissViewControllerAnimated(true, completion: {
             () -> Void in
-          
-            NetworkManager.sharedInstance.postImage(resizedImage, completionHandler: {
-                (error) -> () in
-                
-                if let constError = error
-                {
-                    self.showAlert(constError.localizedDescription)
-                }
-            })
+            var viewController = CreatePinViewController(nibName: "CreatePinViewController", bundle: nil)
             
+            viewController.image = resizedImage
+            
+            self.presentViewController(viewController, animated: true, completion: nil)
         })
+//
+//            NetworkManager.sharedInstance.postImage(resizedImage, completionHandler: {
+//                (error) -> () in
+//                
+//                if let constError = error
+//                {
+//                    self.showAlert(constError.localizedDescription)
+//                }
+//            })
+//        })
     }
 }

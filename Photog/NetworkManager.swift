@@ -37,49 +37,66 @@ public class NetworkManager
         }
     }
     
+//    func fetchFeed(completionHandler: ObjectsCompletionHandler)
+//    {
+//        var relation = PFUser.currentUser().relationForKey("following")
+//        var query = relation.query()
+//        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]!, error: NSError!) -> Void in
+//            
+//            if let constError = error
+//            {
+//                println("error fetching following")
+//                completionHandler(objects: nil, error: constError)
+//            }
+//            else
+//            {
+//                var postQuery = PFQuery(className: "Post")
+//                postQuery.whereKey("User", containedIn: objects)
+//                postQuery.orderByDescending("createdAt")
+//                postQuery.findObjectsInBackgroundWithBlock({ (objects: [AnyObject]!, error: NSError!) -> Void in
+//
+//                    completionHandler(objects: objects, error: error)
+//                    
+//                })
+//            }
+//        }
+//    }
+    
     func fetchFeed(completionHandler: ObjectsCompletionHandler)
     {
-        var relation = PFUser.currentUser().relationForKey("following")
-        var query = relation.query()
-        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]!, error: NSError!) -> Void in
-            
-            if let constError = error
-            {
-                println("error fetching following")
-                completionHandler(objects: nil, error: constError)
-            }
-            else
-            {
-                var postQuery = PFQuery(className: "Post")
-                postQuery.whereKey("User", containedIn: objects)
-                postQuery.orderByDescending("createdAt")
-                postQuery.findObjectsInBackgroundWithBlock({ (objects: [AnyObject]!, error: NSError!) -> Void in
-
-                    completionHandler(objects: objects, error: error)
-                    
-                })
-            }
+        let url = NSURL(string: "http://theworldnearby.com/pins.json")
+        
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                var error : NSError?
+                
+                var pins = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &error) as NSArray
+                
+                completionHandler(objects: pins, error: error)
+            })
         }
+        
+        task.resume()
     }
-
-    func fetchImage(post: PFObject, completionHandler: ImageCompletionHandler)
-    {
-        var imageReference = post["Image"] as PFFile
-        imageReference.getDataInBackgroundWithBlock {
-            (data, error) -> Void in
-         
-            if let constError = error
-            {
-                println("Error fetching image \(constError.localizedDescription)")
-                completionHandler(image: nil, error: constError)
-            }
-            else
-            {
-                let image = UIImage(data: data)
-                completionHandler(image:image, error: nil)
-            }
-        }
-    }
+    
+//    func fetchImage(post: NSDictionary, completionHandler: ImageCompletionHandler)
+//    {
+//        var imageReference = post["Image"] as PFFile
+//        imageReference.getDataInBackgroundWithBlock {
+//            (data, error) -> Void in
+//         
+//            if let constError = error
+//            {
+//                println("Error fetching image \(constError.localizedDescription)")
+//                completionHandler(image: nil, error: constError)
+//            }
+//            else
+//            {
+//                let image = UIImage(data: data)
+//                completionHandler(image:image, error: nil)
+//            }
+//        }
+//    }
     
     func findUsers(searchTerm: String, completionHandler: ObjectsCompletionHandler)
     {

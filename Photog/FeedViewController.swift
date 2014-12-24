@@ -48,7 +48,7 @@ class FeedViewController: UIViewController, UITableViewDataSource
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("PostCellIdentifier") as PostCell
-        var item = items[indexPath.row] as PFObject
+        var item = items[indexPath.row] as NSDictionary
         
         cell.post = item
         
